@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "y7OQ9W687Jk7PFQ901OfU1JV7/WIjvJcXmHffsw0KYs72ayhhzAM74wgQUzvJTnoGfPtDNVPIo2Jx1SY7y0UlQ==",
+  "success": true,
+  "projectFilePath": "/Users/shaw.innes/devops/learn-geospatial/api/api.csproj",
+  "expectedPackageFiles": [
+    "/Users/shaw.innes/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/shaw.innes/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/shaw.innes/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/shaw.innes/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/shaw.innes/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/shaw.innes/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
