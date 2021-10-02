@@ -29,14 +29,15 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.Converters.Add(new NetTopologySuite.IO.Converters.GeoJsonConverterFactory());
-                });
+                .AddJsonOptions(o =>
+                    o.JsonSerializerOptions.Converters.Add(new NetTopologySuite.IO.Converters.GeoJsonConverterFactory())
+                );
+
+            services.AddDbContext<PostGisDbContext>(o =>
+                o.UseNpgsql(Configuration.GetConnectionString("PostGisContext"),
+                    n => n.UseNetTopologySuite()));
 
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "api", Version = "v1" }); });
-
-            services.AddDbContext<PostGisDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PostGisContext"), o => o.UseNetTopologySuite()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,10 +50,7 @@ namespace api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api v1"));
             }
 
-            app.UseCors(p =>
-            {
-                p.AllowAnyOrigin();
-            });
+            app.UseCors(p => { p.AllowAnyOrigin(); });
 
             app.UseHttpsRedirection();
 

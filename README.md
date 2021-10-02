@@ -1,23 +1,29 @@
 # Geospatial Learning
 
-## PostGIS
+## Server-side Geospatial Clustering using H3
 
-## Postgres Extension Network
-
-https://pgxn.org/
+This repo is a companion to a complete blog post [here](https://shawinnes.com/server-side-spatial-clustering/)
 
 ## Getting Started
 
+1. Build the custom PostGIS docker image and start it using docker-compose
+
+```
 docker-compose up -d --build
+```
 
+2. Run the API
 
-dotnet new webapi --name api
+```
+cd api
+dotnet run
+```
 
-dotnet add package Microsoft.EntityFrameworkCore.Design
-dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
-dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite
+3. Start the Front-end App
 
+```
+cd app
+yarn dev
+```
 
-dotnet ef dbcontext scaffold --no-onconfiguring --table public_art --output-dir Data --context PostGisDbContext  "Host=localhost;Database=postgis;Username=postgis;Password=postgis;" Npgsql.EntityFrameworkCore.PostgreSQL
-
-dotnet add package pocketken.H3
+4. Go to the page served by the Front-end App

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using api.Data;
 using H3;
 using H3.Extensions;
@@ -12,8 +9,6 @@ using Microsoft.Extensions.Logging;
 using NetTopologySuite;
 using NetTopologySuite.Features;
 using NetTopologySuite.Geometries;
-using NetTopologySuite.Shape;
-using NetTopologySuite.Utilities;
 
 namespace api.Controllers
 {
@@ -64,7 +59,6 @@ namespace api.Controllers
                     .Select(p => new ClusterItem
                     {
                         Index = p.Key.ToString(),
-                        Centroid = p.Key.ToPoint(),
                         Boundary = p.Key.GetCellBoundary(),
                         Count = p.Count(),
                     }).ToList();
